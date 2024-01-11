@@ -1,9 +1,14 @@
 import React from "react";
 
-const TabButton = ({ label, handleClick }) => {
+const TabButton = ({ label, handleClick, isSelected }) => {
   return (
     <li>
-      <button onClick={handleClick}>{label}</button>
+      <button
+        className={isSelected ? "active" : undefined}
+        onClick={handleClick}
+      >
+        {label}
+      </button>
     </li>
   );
 };

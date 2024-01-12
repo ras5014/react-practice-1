@@ -1,14 +1,18 @@
 import React from "react";
-import "./CoreConcepts.css";
+import CoreConcept from "./CoreConcept";
+import { CORE_CONCEPTS } from "../data";
 
-const CoreConcepts = ({ image, title, description }) => {
+const CoreConcepts = () => {
   return (
     <div>
-      <li>
-        <img src={image} alt="Image Couldn't load" />
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </li>
+      <section id="core-concepts">
+        <h2>Core Concepts</h2>
+        <ul>
+          {CORE_CONCEPTS.map((item) => (
+            <CoreConcept key={item.title} {...item} />
+          ))}
+        </ul>
+      </section>
     </div>
   );
 };
